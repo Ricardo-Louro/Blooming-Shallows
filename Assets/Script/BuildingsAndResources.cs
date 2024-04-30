@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BuildingsAndResources : MonoBehaviour
 {
-    private int houses = 0;
+    public int houses = 0;
 
-    private int citizens = 0;
+    public int citizens = 0;
 
     public void Build(Buildings building)
     {
