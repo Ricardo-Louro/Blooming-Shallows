@@ -5,10 +5,10 @@ public class BuildingsAndResources : MonoBehaviour
 {
     public Building[] validBuildings {private set; get; }
 
-    private int citizens = 0;
-    private int wood = 0;
-    private int food = 0;
-    private int environment = 100;
+    public int citizens;
+    public int wood;
+    public int food;
+    public int environment = 100;
 
     private int currentBuildWoodCost;
     private Building currentBuilding;

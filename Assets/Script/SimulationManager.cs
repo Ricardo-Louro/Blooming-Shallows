@@ -1,8 +1,10 @@
+using Script;
 using UnityEngine;
 
 public class SimulationManager : MonoBehaviour
 {
     [SerializeField] private BuildingsAndResources bR;
+    [SerializeField] private Ui uI;
 
     [Header("Simulation Timer")]
     [SerializeField] private float updateCooldown;
@@ -43,7 +45,7 @@ public class SimulationManager : MonoBehaviour
         house       = bR.validBuildings[0];
         fisherman   = bR.validBuildings[1];
         lumberjack  = bR.validBuildings[2];
-        caretaker   = bR.validBuildings[3]
+        caretaker   = bR.validBuildings[3];
     }
 
     // Update is called once per frame
@@ -62,6 +64,9 @@ public class SimulationManager : MonoBehaviour
         UpdateWoodCount();
         UpdateFoodCount();
         UpdateEnvironment();
+        uI.Update();
+
+        ConsolePrint();
     }
 
     private void UpdateCitizenCount()
@@ -104,5 +109,14 @@ public class SimulationManager : MonoBehaviour
                      + bR.citizens * environment_citizenMultiplier;
         
         bR.environment = Mathf.Min((int)environment, 100);    
+    }
+
+    private void ConsolePrint()
+    {
+        print("/-----------/ Update /-----------/");
+        print($"food: {bR.food}");
+        print($"wood: {bR.wood}");
+        print($"citizens: {bR.citizens}");
+        print($"environment: {bR.environment}");
     }
 }
