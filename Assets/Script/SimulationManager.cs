@@ -75,6 +75,7 @@ public class SimulationManager : MonoBehaviour
                  + bR.food * citizen_foodMultiplier;
 
         bR.citizens = Mathf.Min(bR.citizens, house.AmountBuilt * houseCitizenCap);
+        if(bR.citizens == 0) GameOver();
     }
 
     private void UpdateWoodCount()
@@ -98,6 +99,7 @@ public class SimulationManager : MonoBehaviour
                      + bR.citizens * environment_citizenMultiplier;
         
         bR.environment = Mathf.Min(bR.environment, 100);    
+        if(bR.environment == 0) GameOver();
     }
 
     private void ConsolePrint()
@@ -107,5 +109,10 @@ public class SimulationManager : MonoBehaviour
         print($"wood: {bR.wood}");
         print($"citizens: {bR.citizens}");
         print($"environment: {bR.environment}");
+    }
+
+    private void GameOver()
+    {
+        
     }
 }

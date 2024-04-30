@@ -8,6 +8,8 @@
         public int FoodUpkeep { get; private set; }
         public int WoodUpkeep { get; private set; }
 
+        private int woodCostIncrease = 2;
+
         public Building(string name, int woodCost, int woodUpkeep, int foodUpkeep)
         {
             Name = name;
@@ -19,5 +21,6 @@
         public void BuildNew(int amount)
         {
             AmountBuilt += amount;
+            WoodCost *= woodCostIncrease;
         }
     }

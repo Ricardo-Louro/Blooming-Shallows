@@ -18,9 +18,14 @@ public class Ui : MonoBehaviour
 
     public void Update()
     {
-        woodCountText.text = $"{br.wood}";
-        foodCountText.text = $"{br.food}";
-        citizenCountText.text = $"{br.citizens}";
+        woodCountText.text = $"{Mathf.Max(0, (int)br.wood)}";
+        foodCountText.text = $"{Mathf.Max(0, (int)br.food)}";
+        citizenCountText.text = $"{Mathf.Max(0, (int)br.citizens)}";
         environmentSlider.value = br.environment;
+
+        houseCostText.text = $"{br.validBuildings[0].WoodCost} wood";
+        fishermanCostText.text = $"{br.validBuildings[1].WoodCost} wood";
+        lumberjackCostText.text = $"{br.validBuildings[2].WoodCost} wood";
+        caretakerCostText.text = $"{br.validBuildings[3].WoodCost} wood";
     }
 }
