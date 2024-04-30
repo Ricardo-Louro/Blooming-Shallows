@@ -31,7 +31,6 @@ public class BuildingsAndResources : MonoBehaviour
             if (validBuildings[i].Name != buildingName) continue;
             
             currentBuildWoodCost = validBuildings[i].WoodCost;
-            currentBuildStoneCost = validBuildings[i].StoneCost;
             currentBuilding = validBuildings[i];
 
             bool canBuild = wood >= currentBuildWoodCost &&
@@ -46,11 +45,11 @@ public class BuildingsAndResources : MonoBehaviour
     {
         validBuildings = new[]
         {
-            new Building("mine", 1, 1),
-            new Building("house", 1, 1), 
-            new Building("huntsman", 1, 1),
-            new Building("fisherman", 1, 1),
-            new Building("lumberjack", 1, 1), 
+            new Building("mine", 1),
+            new Building("house", 1), 
+            new Building("huntsman", 1),
+            new Building("fisherman", 1),
+            new Building("lumberjack", 1), 
         };
     }
 }
