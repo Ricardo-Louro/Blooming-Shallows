@@ -1,5 +1,11 @@
-
-public enum Buildings
+﻿namespace Script
 {
-    houses,
+    public enum BuildingEnum
+    {
+        mine,
+        house,
+        huntsman,
+        fisherman,
+        lumberjack,
+    }
 }

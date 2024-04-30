@@ -1,8 +1,9 @@
+using Script;
 using UnityEngine;
 
 public class BuildButton : Button
 {
-    [SerializeField] private Buildings              building;
+    [SerializeField] private BuildingEnum              building;
     private BuildingsAndResources                   buildingsAndResources;
     public override GameObject                      tooltip { get; protected set; }
 
@@ -14,6 +15,6 @@ public class BuildButton : Button
 
     protected override void OnClick()
     {
-        buildingsAndResources.Build(building);
+        buildingsAndResources.Build(building.ToString());
     }
 }
