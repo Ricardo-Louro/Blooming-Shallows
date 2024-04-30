@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class BuildingsAndResources : MonoBehaviour
 {
-    private Building[] validBuildings;
+    public Building[] validBuildings {private set; get; }
 
-    private int citizens = 0;
-    private int wood = 0;
-    private int stone = 0;
-    private int food = 0;
+    public int citizens = 0;
+    public int wood = 0;
+    public int stone = 0;
+    public int food = 0;
+
+    public int houses = 0;
 
     private int currentBuildWoodCost;
     private int currentBuildStoneCost;
