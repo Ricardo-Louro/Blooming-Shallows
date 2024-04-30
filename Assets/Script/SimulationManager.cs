@@ -64,6 +64,7 @@ public class SimulationManager : MonoBehaviour
         UpdateWoodCount();
         UpdateFoodCount();
         UpdateEnvironment();
+        PayUpkeeps();
         uI.Update();
 
         ConsolePrint();
@@ -98,6 +99,15 @@ public class SimulationManager : MonoBehaviour
                      + bR.citizens * environment_citizenMultiplier;
         
         bR.environment = Mathf.Min(bR.environment, 100);    
+    }
+
+    private void PayUpkeeps()
+    {
+        foreach(Building building in bR.validBuildings)
+        {
+            bR.wood -= building.AmountBuilt * building.WoodUpkeep;
+            bR.food -= building.AmountBuilt * building.FoodUpkeep;
+        }
     }
 
     private void ConsolePrint()
