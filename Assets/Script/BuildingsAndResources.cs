@@ -7,12 +7,10 @@ public class BuildingsAndResources : MonoBehaviour
 
     private int citizens = 0;
     private int wood = 0;
-    private int stone = 0;
     private int food = 0;
     private int environment = 100;
 
     private int currentBuildWoodCost;
-    private int currentBuildStoneCost;
     private Building currentBuilding;
 
     public void Build(string buildingName)
@@ -20,7 +18,6 @@ public class BuildingsAndResources : MonoBehaviour
         if (CheckBuildingRequirements(buildingName))
         {
             wood -= currentBuildWoodCost;
-            stone -= currentBuildStoneCost;
             currentBuilding.BuildNew(1);
         }
     }
@@ -34,8 +31,8 @@ public class BuildingsAndResources : MonoBehaviour
             currentBuildWoodCost = validBuildings[i].WoodCost;
             currentBuilding = validBuildings[i];
 
-            bool canBuild = wood >= currentBuildWoodCost &&
-                            stone >= currentBuildStoneCost;
+            bool canBuild = wood >= currentBuildWoodCost;
+                            
             return canBuild;
         }
 
