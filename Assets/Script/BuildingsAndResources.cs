@@ -9,6 +9,7 @@ public class BuildingsAndResources : MonoBehaviour
     private int wood = 0;
     private int stone = 0;
     private int food = 0;
+    private int environment = 100;
 
     private int currentBuildWoodCost;
     private int currentBuildStoneCost;
