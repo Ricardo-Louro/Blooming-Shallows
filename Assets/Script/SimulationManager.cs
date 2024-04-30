@@ -71,44 +71,33 @@ public class SimulationManager : MonoBehaviour
 
     private void UpdateCitizenCount()
     {
-        float citizens = bR.citizens;
-
-        citizens += house.AmountBuilt * citizen_housingMultiplier
+        bR.citizens += house.AmountBuilt * citizen_housingMultiplier
                  + bR.food * citizen_foodMultiplier;
 
-        bR.citizens = Mathf.Min((int)citizens, house.AmountBuilt * houseCitizenCap);
+        bR.citizens = Mathf.Min(bR.citizens, house.AmountBuilt * houseCitizenCap);
     }
 
     private void UpdateWoodCount()
     {
-        float wood = bR.wood;
-
-        wood += lumberjack.AmountBuilt * wood_lumberjackMultiplier
+        bR.wood += lumberjack.AmountBuilt * wood_lumberjackMultiplier
               + bR.citizens * wood_citizenMultiplier;
 
-        bR.wood = (int)wood;
     }
 
     private void UpdateFoodCount()
     {
-        float food = bR.food;
-
-        food += fisherman.AmountBuilt * food_fishermanMultiplier
+        bR.food += fisherman.AmountBuilt * food_fishermanMultiplier
               + bR.citizens * food_citizenMultiplier;
-        
-        bR.food = (int)food;
     }
 
     private void UpdateEnvironment()
     {
-        float environment = bR.environment;
-
-        environment += caretaker.AmountBuilt * environment_caretakerMultiplier
+        bR.environment += caretaker.AmountBuilt * environment_caretakerMultiplier
                      + fisherman.AmountBuilt * environment_fishermanMultiplier
                      + lumberjack.AmountBuilt * environment_lumberjackMultiplier
                      + bR.citizens * environment_citizenMultiplier;
         
-        bR.environment = Mathf.Min((int)environment, 100);    
+        bR.environment = Mathf.Min(bR.environment, 100);    
     }
 
     private void ConsolePrint()
