@@ -5,12 +5,6 @@ public class BuildingsAndResources : MonoBehaviour
 {
     private Building[] validBuildings;
 
-    private int houses;
-    private int huntsmanHouses;
-    private int fishermanHouses;
-    private int lumberjackHouses;
-    private int mines;
-
     private int citizens = 0;
     private int wood = 0;
     private int stone = 0;
