@@ -5,12 +5,11 @@ public class BuildingsAndResources : MonoBehaviour
 {
     public Building[] validBuildings {private set; get; }
 
-    public int citizens = 0;
-    public int wood = 0;
-    public int stone = 0;
-    public int food = 0;
-
-    public int houses = 0;
+    private int citizens = 0;
+    private int wood = 0;
+    private int stone = 0;
+    private int food = 0;
+    private int environment = 100;
 
     private int currentBuildWoodCost;
     private int currentBuildStoneCost;
@@ -33,7 +32,6 @@ public class BuildingsAndResources : MonoBehaviour
             if (validBuildings[i].Name != buildingName) continue;
             
             currentBuildWoodCost = validBuildings[i].WoodCost;
-            currentBuildStoneCost = validBuildings[i].StoneCost;
             currentBuilding = validBuildings[i];
 
             bool canBuild = wood >= currentBuildWoodCost &&
@@ -48,11 +46,10 @@ public class BuildingsAndResources : MonoBehaviour
     {
         validBuildings = new[]
         {
-            new Building("mine", 1, 1),
-            new Building("house", 1, 1), 
-            new Building("huntsman", 1, 1),
-            new Building("fisherman", 1, 1),
-            new Building("lumberjack", 1, 1), 
+            new Building("house", 1, 1, 1), 
+            new Building("fisherman", 1, 1, 0),
+            new Building("lumberjack", 1, 0, 1),
+            new Building("caretaker", 1, 1, 1)
         };
     }
 }

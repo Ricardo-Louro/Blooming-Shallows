@@ -2,15 +2,18 @@
     {
         public string Name { get; private set; }
         public int WoodCost { get; private set; }
-        public int StoneCost { get; private set; }
         
         public int AmountBuilt { get; private set; }
+        
+        public int FoodUpkeep { get; private set; }
+        public int WoodUpkeep { get; private set; }
 
-        public Building(string name, int woodCost, int stoneCost)
+        public Building(string name, int woodCost, int woodUpkeep, int foodUpkeep)
         {
             Name = name;
             WoodCost = woodCost;
-            StoneCost = stoneCost;
+            WoodUpkeep = woodUpkeep;
+            FoodUpkeep = foodUpkeep;
         }
 
         public void BuildNew(int amount)
