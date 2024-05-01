@@ -2,14 +2,19 @@ using UnityEngine;
 
 public abstract class Button : MonoBehaviour
 {
-    [SerializeField] public abstract GameObject tooltip{get; protected set;}
+    [SerializeField] protected GameObject tooltip;
 
-    private void ShowTooltip()
+    protected void Start()
+    {
+        HideTooltip();
+    }
+
+    public void ShowTooltip()
     {
         tooltip.SetActive(true);
     }
 
-    private void HideTooltip()
+    public void HideTooltip()
     {
         tooltip.SetActive(false);
     }
