@@ -568,7 +568,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2669471293160211005}
           m_TargetAssemblyTypeName: Button, Assembly-CSharp
-          m_MethodName: ShowTooltip
+          m_MethodName: QueueShowTooltip
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 2982681881162773974}
+  tooltipDelay: 0.5
   building: 0
   counterText: {fileID: 4913611884181319628}
 --- !u!1 &4624749372893671831

@@ -1,5 +1,5 @@
-using Script;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
@@ -123,6 +123,6 @@ public class SimulationManager : MonoBehaviour
 
     private void GameOver()
     {
-        
+        SceneManager.LoadScene("GameOver");
     }
 }
