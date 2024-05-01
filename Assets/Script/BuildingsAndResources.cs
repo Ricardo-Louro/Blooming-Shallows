@@ -3,23 +3,26 @@ using UnityEngine;
 
 public class BuildingsAndResources : MonoBehaviour
 {
-    public Building[] validBuildings {private set; get; }
+    public Building[]               validBuildings {private set; get; }
 
-    public float citizens;
-    public float wood;
-    public float food;
-    public float environment = 100;
+    public float                    citizens;
+    public float                    wood;
+    public float                    food;
+    public float                    environment = 100;
 
-    private int currentBuildWoodCost;
-    private Building currentBuilding;
+    private int                     currentBuildWoodCost;
+    private Building                currentBuilding;
 
-    public void Build(string buildingName)
+
+    public bool Build(string buildingName)
     {
         if (CheckBuildingRequirements(buildingName))
         {
             wood -= currentBuildWoodCost;
             currentBuilding.BuildNew(1);
+            return true;
         }
+        return false;
     }
 
     private bool CheckBuildingRequirements(string buildingName)
