@@ -42,7 +42,7 @@ public class BuildingsAndResources : MonoBehaviour
         return false;
     }
 
-    public void Start()
+    public void Awake()
     {
         validBuildings = new[]
         {

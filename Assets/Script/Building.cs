@@ -8,7 +8,7 @@
         public float FoodUpkeep { get; private set; }
         public float WoodUpkeep { get; private set; }
 
-        private int woodCostIncrease = 2;
+        private float woodCostIncrease = 1.25f;
 
         public Building(string name, int woodCost, float woodUpkeep, float foodUpkeep)
         {
@@ -21,6 +21,6 @@
         public void BuildNew(int amount)
         {
             AmountBuilt += amount;
-            WoodCost *= woodCostIncrease;
+            WoodCost = (int)(WoodCost * woodCostIncrease + 2 * AmountBuilt);
         }
     }

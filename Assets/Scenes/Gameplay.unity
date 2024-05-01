@@ -3022,6 +3022,10 @@ PrefabInstance:
       propertyPath: uI
       value: 
       objectReference: {fileID: 1581560194}
+    - target: {fileID: 3768985637788347501, guid: 521b7768c7c8ca640867621e919b7b9a, type: 3}
+      propertyPath: environment_caretakerMultiplier
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7694038886774777068, guid: 521b7768c7c8ca640867621e919b7b9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 250.8147
@@ -3133,7 +3137,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1561832283}
   - {fileID: 8073927922405639010}
-  - {fileID: 6248468478542625794}
   - {fileID: 2591269951532981434}
+  - {fileID: 6248468478542625794}
   - {fileID: 1926253968}
   - {fileID: 1581560193}

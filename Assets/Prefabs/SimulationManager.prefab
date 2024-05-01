@@ -49,12 +49,12 @@ MonoBehaviour:
   updateCooldown: 1
   citizen_foodMultiplier: 0.1
   citizen_housingMultiplier: 0.1
-  houseCitizenCap: 5
+  houseCitizenCap: 10
   environment_caretakerMultiplier: 1
-  environment_fishermanMultiplier: -0.1
-  environment_lumberjackMultiplier: -0.1
-  environment_citizenMultiplier: -0.01
-  wood_lumberjackMultiplier: 2
-  wood_citizenMultiplier: 0.1
-  food_citizenMultiplier: -0.1
-  food_fishermanMultiplier: 2
+  environment_fishermanMultiplier: -0.5
+  environment_lumberjackMultiplier: -0.5
+  environment_citizenMultiplier: -0.05
+  wood_lumberjackMultiplier: 5
+  wood_citizenMultiplier: 0.5
+  food_citizenMultiplier: -0.5
+  food_fishermanMultiplier: 5

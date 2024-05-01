@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
+    public bool canLose;
+
     [SerializeField] private BuildingsAndResources bR;
     [SerializeField] private Ui uI;
 
@@ -39,13 +41,17 @@ public class SimulationManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        canLose = false;
         lastTimeUpdated = Time.time;
         bR = FindObjectOfType<BuildingsAndResources>();
 
+        Debug.Log(bR);
+        Debug.Log(bR.validBuildings);
         house       = bR.validBuildings[0];
         fisherman   = bR.validBuildings[1];
         lumberjack  = bR.validBuildings[2];
         caretaker   = bR.validBuildings[3];
+        Debug.Log(bR.validBuildings);
     }
 
     // Update is called once per frame
@@ -60,6 +66,11 @@ public class SimulationManager : MonoBehaviour
 
     private void SimulationUpdate()
     {
+        if(bR.citizens > 0 && !canLose)
+        {
+            canLose = true;
+        }
+
         UpdateCitizenCount();
         UpdateWoodCount();
         UpdateFoodCount();
@@ -73,10 +84,10 @@ public class SimulationManager : MonoBehaviour
     private void UpdateCitizenCount()
     {
         bR.citizens += house.AmountBuilt * citizen_housingMultiplier
-                 + bR.food * citizen_foodMultiplier;
+                    + bR.food * citizen_foodMultiplier;
 
         bR.citizens = Mathf.Min(bR.citizens, house.AmountBuilt * houseCitizenCap);
-        if(bR.citizens == 0) GameOver();
+        if(bR.citizens < 1) GameOver();
     }
 
     private void UpdateWoodCount()
@@ -100,7 +111,7 @@ public class SimulationManager : MonoBehaviour
                      + bR.citizens * environment_citizenMultiplier;
         
         bR.environment = Mathf.Min(bR.environment, 100);    
-        if(bR.environment == 0) GameOver();
+        if(bR.environment < 1) GameOver();
     }
 
     private void PayUpkeeps()
@@ -123,6 +134,9 @@ public class SimulationManager : MonoBehaviour
 
     private void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        if(canLose)
+        {
+            SceneManager.LoadScene("GameOver"); 
+        }
     }
 }
