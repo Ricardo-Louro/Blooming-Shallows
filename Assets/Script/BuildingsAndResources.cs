@@ -43,10 +43,10 @@ public class BuildingsAndResources : MonoBehaviour
     {
         validBuildings = new[]
         {
-            new Building("house", 1, 1, 1), 
-            new Building("fisherman", 1, 1, 0),
-            new Building("lumberjack", 1, 0, 1),
-            new Building("caretaker", 1, 1, 1)
+            new Building("house", 1, 0.5f, 0.5f), 
+            new Building("fisherman", 1, 0.5f, 0),
+            new Building("lumberjack", 1, 0, 0.5f),
+            new Building("caretaker", 1, 0.5f, 0.5f)
         };
     }
 }

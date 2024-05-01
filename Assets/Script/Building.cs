@@ -5,12 +5,12 @@
         
         public int AmountBuilt { get; private set; }
         
-        public int FoodUpkeep { get; private set; }
-        public int WoodUpkeep { get; private set; }
+        public float FoodUpkeep { get; private set; }
+        public float WoodUpkeep { get; private set; }
 
         private int woodCostIncrease = 2;
 
-        public Building(string name, int woodCost, int woodUpkeep, int foodUpkeep)
+        public Building(string name, int woodCost, float woodUpkeep, float foodUpkeep)
         {
             Name = name;
             WoodCost = woodCost;
