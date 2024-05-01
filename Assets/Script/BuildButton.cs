@@ -18,6 +18,8 @@ public class BuildButton : Button
         buildingsAndResources = FindObjectOfType<BuildingsAndResources>();
     }
 
+    public void Click() => OnClick();
+
     protected override void OnClick()
     {
         if(buildingsAndResources.Build(building.ToString()))
