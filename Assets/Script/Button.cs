@@ -15,14 +15,14 @@ public abstract class Button : MonoBehaviour
 
     public void QueueShowTooltip()
     {
-        coroutine = ShowTooltip();
-        StartCoroutine(coroutine);
+        //coroutine = ShowTooltip();
+        //StartCoroutine(coroutine);
     }
 
     public void HideTooltip()
     {
-        StopCoroutine(coroutine);
-        tooltip.SetActive(false);
+        //StopCoroutine(coroutine);
+        //tooltip.SetActive(false);
     }
 
     protected IEnumerator ShowTooltip()

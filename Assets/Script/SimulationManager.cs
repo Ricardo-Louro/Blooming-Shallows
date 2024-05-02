@@ -45,13 +45,10 @@ public class SimulationManager : MonoBehaviour
         lastTimeUpdated = Time.time;
         bR = FindObjectOfType<BuildingsAndResources>();
 
-        Debug.Log(bR);
-        Debug.Log(bR.validBuildings);
         house       = bR.validBuildings[0];
         fisherman   = bR.validBuildings[1];
         lumberjack  = bR.validBuildings[2];
         caretaker   = bR.validBuildings[3];
-        Debug.Log(bR.validBuildings);
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildButton : Button
 {
     [SerializeField] private BuildingEnum           building;
+    [SerializeField] private HousePositioning hp;
     private BuildingsAndResources                   buildingsAndResources;
     [SerializeField] private TextMeshProUGUI        counterText;
     private int                                     numberOfBuildings;
@@ -24,6 +25,7 @@ public class BuildButton : Button
     {
         if(buildingsAndResources.Build(building.ToString()))
         {
+            hp.BuildNew(building.ToString());
             numberOfBuildings++;
             counterText.text = numberOfBuildings.ToString();
         }
